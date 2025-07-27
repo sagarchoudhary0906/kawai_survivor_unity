@@ -18,12 +18,6 @@ public class PlayerController : MonoBehaviour
         rig.linearVelocity = Vector2.right;
         moveSpeed = 7;
     }
-
-    // Update is called once per frame
-    void Update()
-    {
-    }
-
     private void FixedUpdate()
     {
         rig.linearVelocity = playerJoystick.GetMoveVector() * moveSpeed * Time.deltaTime;

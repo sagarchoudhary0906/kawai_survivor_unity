@@ -20,11 +20,11 @@ public class CameraController : MonoBehaviour
         Vector3 targetPosition = target.position;
         targetPosition.z = -10;
         
-        // Calmping camer taget posiiton with minX maxX and minY and maxY
+        // Clamping camera target position with minX maxX and minY and maxY
         
         targetPosition.x = Mathf.Clamp(targetPosition.x, -minMaxXY.x, minMaxXY.x);
-        targetPosition.y = Mathf.Clamp(targetPosition.x, -minMaxXY.y, minMaxXY.y);
+        targetPosition.y = Mathf.Clamp(targetPosition.y, -minMaxXY.y, minMaxXY.y);
         
-        transform.position = targetPosition;
+        transform.position = Vector3.Lerp(transform.position, targetPosition, 0.1f);    
     }
 }
